@@ -99,11 +99,11 @@ include('../config/DbFunction.php');
 			
 			<div class="form-group">
 		<div class="col-lg-4">
-		<label>Current  Session<span id="" style="font-size:11px;color:red">*</span></label>
+		<!-- <label>Current  Session<span id="" style="font-size:11px;color:red">*</span></label -->
 		</div>
 		<div class="col-lg-6">
 		
-	   <input class="form-control" name="session" value="<?php echo htmlentities($res1->session);?>" readonly>
+	   <input class="form-control" type="hidden" name="session" value="<?php echo htmlentities($res1->session);?>" readonly>
 	 </div>	
 										
 	 <br><br>								

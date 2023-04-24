@@ -48,9 +48,9 @@
                    <li>
                             <a href="view.php"><i class="fa fa-bar-chart-o fa-fw"></i>View Students<span class="fa arrow"></span></a>
                   </li>      
-                   <li>
+                   <!-- <li>
                             <a href="session.php"><i class="fa fa-bar-chart-o fa-fw"></i>Session<span class="fa arrow"></span></a>
-                  </li>
+                  </li> -->
                    <li>
                             <a href="logout.php"><i class="fa fa-bar-chart-o fa-fw"></i>Logout<span class="fa arrow"></span></a>
                   </li>

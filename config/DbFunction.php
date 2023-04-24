@@ -214,6 +214,7 @@ function register($cshort,$cfull,$fname,$mname,$lname,$gender,$gname,$ocp,$incom
 					 `padd`, `cadd`, `board`, `board1`,`roll`,`roll1`,`pyear`,`yop1`,`sub`,`sub1`,`marks`,`marks1`,
 					 `fmarks`,`fmarks1`,`session`,regno) 
                    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	
 			        $reg=rand();
 			        $stmt= $mysqli->prepare($query);
 			        if(false===$stmt){
