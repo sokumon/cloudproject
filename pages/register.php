@@ -68,10 +68,10 @@ include('../config/DbFunction.php');
 			<div class="col-lg-10">
 			<div class="form-group">
 		    <div class="col-lg-4">
-			<label>Select Course<span id="" style="font-size:11px;color:red">*</span>	</label>
+			<label>Select Course</label>
 			</div>
 			<div class="col-lg-6">
-<select class="form-control" name="course-short" id="cshort"  onchange="showSub(this.value)" required="required" >			
+<select class="form-control" name="course-short" id="cshort"  onchange="showSub(this.value)">			
 <option VALUE="">SELECT</option>
 				<?php while($res=$rs->fetch_object()){?>							
 			
@@ -87,7 +87,7 @@ include('../config/DbFunction.php');
 								
 		<div class="form-group">
 		<div class="col-lg-4">
-		<label>Select Subject<span id="" style="font-size:11px;color:red">*</span></label>
+		<label>Select Subject</label>
 		</div>
 		<div class="col-lg-6">
  <input class="form-control" name="c-full"  id="c-full" >
@@ -131,11 +131,11 @@ include('../config/DbFunction.php');
 			<div class="col-lg-12">
 			<div class="form-group">
 		    <div class="col-lg-2">
-			<label>First Name<span id="" style="font-size:11px;color:red">*</span>	</label>
+			<label>First Name	</label>
 			
 			</div>
 			<div class="col-lg-4">
-			<input class="form-control" name="fname" required="required" pattern="[A-Za-z]+$">
+			<input class="form-control" name="fname"  pattern="[A-Za-z]+$">
 			</div>
 			 <div class="col-lg-2">
 			<label>Middle Name</label>
@@ -167,11 +167,11 @@ include('../config/DbFunction.php');
 	<br><br>		
 		     <div class="form-group">
 			 <div class="col-lg-2">
-			<label>Guardian Name<span id="" style="font-size:11px;color:red">*</span>	</label>
+			<label>Guardian Name	</label>
 			
 			</div>
 			<div class="col-lg-4">
-			<input class="form-control" name="gname" required="required" pattern="[A-Za-z]+$">
+			<input class="form-control" name="gname" pattern="[A-Za-z]+$">
 			</div>
 			 <div class="col-lg-2">
 			<label>Occupation</label>
@@ -185,7 +185,7 @@ include('../config/DbFunction.php');
 					
 		     <div class="form-group">
 			 <div class="col-lg-2">
-			<label>Family Income<span id="" style="font-size:11px;color:red">*</span></label>
+			<label>Family Income</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -198,7 +198,7 @@ include('../config/DbFunction.php');
        </select>
 			</div>
 			 <div class="col-lg-2">
-			<label>Category<span id="" style="font-size:11px;color:red">*</span></label>
+			<label>Category</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -218,7 +218,7 @@ include('../config/DbFunction.php');
 					
 		     <div class="form-group">
 			 <div class="col-lg-2">
-			<label>Physically Challenged<span id="" style="font-size:11px;color:red">*</span></label>
+			<label>Physically Challenged</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -230,7 +230,7 @@ include('../config/DbFunction.php');
        </select>
 			</div>
 			 <div class="col-lg-2">
-			<label>Nationality<span id="" style="font-size:11px;color:red">*</span></label>
+			<label>Nationality</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -253,7 +253,7 @@ include('../config/DbFunction.php');
 			<div class="col-lg-12">
 			<div class="form-group">
 		    <div class="col-lg-2">
-			<label>Mobile Number<span id="" style="font-size:11px;color:red">*</span>	</label>
+			<label>Mobile Number</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -298,7 +298,7 @@ include('../config/DbFunction.php');
 	<br><br><br><br>		
 		     <div class="form-group">
 			 <div class="col-lg-2">
-			<label>City<span id="" style="font-size:11px;color:red">*</span>	</label>
+			<label>City	</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -307,7 +307,7 @@ include('../config/DbFunction.php');
 		</select>
 			</div>
 			 <div class="col-lg-2">
-			<label>Permanent Address<span id="" style="font-size:11px;color:red">*</span></label>
+			<label>Permanent Address</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -323,7 +323,7 @@ include('../config/DbFunction.php');
 					
 		     <div class="form-group">
 			 <div class="col-lg-2">
-			<label>Correspondence Address<span id="" style="font-size:11px;color:red">*</span>
+			<label>Correspondence Address</label>
 			
 			</div>
 			<div class="col-lg-4">
@@ -363,13 +363,13 @@ include('../config/DbFunction.php');
                                     <thead>
                                         <tr>
                                          <div class="col-lg-6">
-			<th>&nbsp;&nbsp;&nbsp;&nbsp;Board<span id="" style="font-size:11px;color:red">*</span>	</label></th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;Board	</label></th>
 			</div>   
             <div class="col-lg-6">
 			<th>&nbsp;&nbsp;&nbsp;&nbsp;Roll No</th>
 			</div>   
               <div class="col-lg-6">
-			 <th>&nbsp;&nbsp;&nbsp;&nbsp;Year Of Passing<span id="" style="font-size:11px;color:red">*</span></th>
+			 <th>&nbsp;&nbsp;&nbsp;&nbsp;Year Of Passing</th>
 			</div>                                 
             </tr>
                                     </thead>
