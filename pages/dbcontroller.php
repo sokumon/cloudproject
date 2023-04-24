@@ -1,7 +1,7 @@
 <?php
-$DB_host = "localhost";
+$DB_host = "35.239.249.28";
 $DB_user = "root";
-$DB_pass = "";
+$DB_pass = "generate";
 $DB_name = "schoolmanagement";
 try
 {
