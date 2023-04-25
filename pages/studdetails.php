@@ -1,4 +1,5 @@
 <?php
+include('dbcreds.php');
 session_start ();
 
 if (! (isset ( $_SESSION ['login'] ))) {
@@ -8,15 +9,23 @@ if (! (isset ( $_SESSION ['login'] ))) {
    
     include('../config/DbFunction.php');
     $obj=new DbFunction();
-	$rs=$obj->showstudents();
-   
+	$rs=$obj->showCourse();
 
-	if(isset($_GET['del']))
-    {    
-         
-		  $obj->del_std(intval($_GET['del']));
-    }
 
+if(isset($_GET['del']))
+    {
+           
+          $obj->del_course(intval($_GET['del']));
+          
+       
+  }
+// $res->fname." ".$res->mname." ".$res->lname;
+$selected_course = $_GET["sub"];
+$split = explode(",",$selected_course);
+print_r($split);
+$sql = "SELECT * from `registration` WHERE fname ='".$split[0]."'";
+echo $sql;
+$result = mysqli_query($connect,$sql);
 ?> 
 
 <!DOCTYPE html>
@@ -29,15 +38,15 @@ if (! (isset ( $_SESSION ['login'] ))) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>View Students</title>
+
+    <title>view course</title>
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
     <link href="../bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
+   
 </head>
 
 <body>
@@ -53,7 +62,7 @@ if (! (isset ( $_SESSION ['login'] ))) {
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                   <h4 class="page-header"> <?php echo strtoupper("welcome"." ".htmlentities($_SESSION['login']));?></h4>
+                   <h4 class="page-header"> <?php echo "Subject Name :"." ".$split[0]." ".$split[1]." ".$split[2];?></h4>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -62,55 +71,24 @@ if (! (isset ( $_SESSION ['login'] ))) {
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            View Students
+                            Subjects for the course
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>SNo</th>
-											<th>RegNo</th>
-											<th>Name</th>
-                                            <th>Email</th>
-                                            <th>MobNO</th>
-											<th>Course</th>
-											<th>Subject</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <?php 
-                                         $sn=1;
-                                     while($res=$rs->fetch_object()){
-									 
-	                                  $c=$res->course;
-									  $cname=$obj->showCourse1($c);
-									  $res1=$cname->fetch_object();
-									  
-									 ?>	
-                                        <tr class="odd gradeX">
-                              <td><?php echo $sn?></td>
-                              <td><?php echo htmlentities( strtoupper($res->regno));?></td>
-             <td><a href=<?php echo "studdetails.php?sub=".htmlentities(($res->fname.",".$res->mname.",".$res->lname));?>><?php echo htmlentities(($res->fname." ".$res->mname." ".$res->lname));?></a></td>
-       <td><?php echo htmlentities(strtoupper($res->emailid));?></td>
-	  <td><?php echo htmlentities($res->mobno);?></td>
-	  <td><?php echo htmlentities(strtoupper($res1->cshort));?></td>
-      <td><?php echo htmlentities(strtoupper($res->subject));?></td>											  
-      <td>&nbsp;&nbsp;<a href="edit-std.php?id=<?php echo htmlentities($res->id);?>">
-	  <p class="fa fa-edit"></p></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="view.php?del=<?php echo htmlentities($res->id); ?>">
-	  <p class="fa fa-times-circle"></p>
-	  
-	  </td>
-                                            
-                                        </tr>
-                                        
-                                    <?php $sn++;}?>   	           
-                                    </tbody>
-                                </table>
+                                <?php
+                                if(mysqli_num_rows($result)>0){
+                                    while($row=mysqli_fetch_assoc($result)){
+                                        echo "Fullname:   ".$row["fname"]." ".$row["mname"]." ".$row["lname"]."<br>";
+                                        echo "Subjects choosen: ".$row["subject"]."<br>";
+                                        echo "Email ID: ".$row["emailid"]."<br>";
+                                        echo "Gender:".$row["ocp"]."<br>";
+                                        echo "Nationality:".$row["nationality"]."<br>";
+                                        echo "Physically Challeneged:".$row["pchal"]."<br>";
+                                        // print_r($row);
+                                    }
+                                }
+                                ?>
                             </div>
                             <!-- /.table-responsive -->
                            
