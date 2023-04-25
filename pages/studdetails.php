@@ -22,9 +22,9 @@ if(isset($_GET['del']))
 // $res->fname." ".$res->mname." ".$res->lname;
 $selected_course = $_GET["sub"];
 $split = explode(",",$selected_course);
-print_r($split);
+// print_r($split);
 $sql = "SELECT * from `registration` WHERE fname ='".$split[0]."'";
-echo $sql;
+// echo $sql;
 $result = mysqli_query($connect,$sql);
 ?> 
 
@@ -85,6 +85,8 @@ $result = mysqli_query($connect,$sql);
                                         echo "Gender:".$row["ocp"]."<br>";
                                         echo "Nationality:".$row["nationality"]."<br>";
                                         echo "Physically Challeneged:".$row["pchal"]."<br>";
+                                        echo "Monthly Income:".$row["income"]."<br>";
+                                        echo "Fathers Occupation:".$row["gname"]."<br>";        
                                         // print_r($row);
                                     }
                                 }
